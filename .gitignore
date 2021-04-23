@@ -148,3 +148,7 @@ htmlcov/
 notebooks
 wandb/
 *.bak
+
+
+# testing templates
+temp_exp

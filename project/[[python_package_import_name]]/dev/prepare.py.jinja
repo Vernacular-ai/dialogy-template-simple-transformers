@@ -24,9 +24,8 @@ def preprocess(df):
         try:
             alternatives = data[const.ALTERNATIVES]
         except KeyError as key_error:
-            raise KeyError('Your data doesn\'t match the expected format!'
-            ' your data column should have {"alternatives": [[{"transcript": "..."}]]})'
-            f' \ninstead looks like {data}')
+            key_err_string = """Your data doesn't match the expected format! your data column should have {"alternatives": [[{"transcript": "..."}]]})\ninstead looks like """
+            raise KeyError(key_err_string + str(data))
         data = merge_asr_output(data)
         texts.append(data)
         [% endif %]
